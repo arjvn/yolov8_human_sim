@@ -1,0 +1,17 @@
+# Basic Files
+*.ipynb
+
+# Weights
+*.pt
+*.pth
+*.log
+
+# Videos
+*.mp4
+*.avi
+*.mov
+
+# Other files and folders 
+datasets/peoplesanspeople/*
+PeopleSansPeople
+yolov8
