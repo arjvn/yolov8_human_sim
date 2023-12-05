@@ -1,7 +1,7 @@
 # 🚀 A Pipeline to Analyse YOLOv8 Performance with Domain Randomization
 ## 📝 Description
 
-This repository contains code and documentation for a pipelin which quantifies the performance of YOLOv8 in person detection under varying conditions of occlusion and lighting using domain randomization.
+This repository contains code and documentation for a pipeline which quantifies the performance of YOLOv8 in person detection under varying conditions of occlusion and lighting using domain randomization.
 
 ### Overview
 
