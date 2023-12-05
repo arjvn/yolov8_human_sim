@@ -1,13 +1,10 @@
 import json
 import cv2
-import matplotlib.pyplot as plt
 import os
 from tqdm import tqdm
 import random
 import glob
 import argparse
-import os
-
 
 # Create a function to convert bounding box coordinates to normalized xywh format
 def convert_bbox_to_yolo(bbox, image_width, image_height):
@@ -114,10 +111,3 @@ if __name__ == '__main__':
         yaml_file.write("val: ../images/val\n")
         yaml_file.write("names:\n")
         yaml_file.write(f"  0: {annotation['label_name']}\n")
-
-    print(image_path)
-    print(label_file_path)
-    cv2.rectangle(image, (bbox[0], bbox[1]), (bbox[0] + bbox[2], bbox[1] + bbox[3]), (0, 255, 0), 2)
-    plt.imshow(cv2.cvtColor(image, cv2.COLOR_BGR2RGB))
-    plt.axis('off')
-    plt.show()
