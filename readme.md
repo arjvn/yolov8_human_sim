@@ -1,10 +1,28 @@
-# 🚀 Yolov8 + PeopleSansPeople training Pipeline
-
+# 🚀 A Pipeline to Analyse YOLOv8 Performance with Domain Randomization
 ## 📝 Description
 
+This repository contains code and documentation for a pipelin which quantifies the performance of YOLOv8 in person detection under varying conditions of occlusion and lighting using domain randomization.
 
+### Overview
+
+The goal of this project is to assess the impact of domain randomization on the performance of YOLOv8 for person detection. The PeopleSansPeople toolkit in Unity is utilized to create a synthetic person dataset with parameterized lighting and primitive occluders/distractors. The project includes:
+
+- An automated synthetic person dataset generation pipeline.
+- Codebase for running YOLOv8 inference on the generated dataset.
+- Output of performance metrics for analysis.
+
+
+### Features
+- Automated Dataset Generation: Utilize PeopleSansPeople toolkit to generate a synthetic person dataset with parameterized lighting and primitive occluders/distractors. This is controlled via ```scenarioConfiguration.json```
+
+- YOLOv8 Inference: Run YOLOv8 for inference on the generated dataset to detect persons in various conditions. The training process is controlled by ```train.py```
+
+- Performance Metrics: Output metrics to quantify the performance of YOLOv8 under different scenarios. 
 
 ## 🛠️ Installation
+
+All of the requirements to run the pipeline are encompassed within a dockerfile. Users only need to clone this repository and run the ```start.bash``` file.
+You will need [docker](https://docs.docker.com/engine/install/), [nvidia-docker pass through](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html) and a basic python environment to run the pipeline.
 
 Follow these steps to get a development environment running:
 
@@ -29,9 +47,11 @@ The script will then clone the PeopleSansPeople repository, download a specific 
 
 Finally, the script will build and run a Docker image for the YOLOv8 project.
 
-
+Results from the pipeline can be found in ```yolov8/docker_run/<experiment-name>/detect/train```
 
 ## 🔑 Key Files
+
+There are three key file in this pipeline each of them can behave as an independent module given the right input parameters. 
 
 ### Create_yolo_labels.py
 
@@ -49,8 +69,7 @@ python create_yolo_labels.py --images_dir <path_to_images_directory> --annotatio
 ### ScenarioConfiguration.json
 
 
-This file contains the configuration settings for the scenario. It defines various parameters and options that are used during the
-execution of the scenario.
+This file contains the configuration settings for the scenario. It defines various parameters and options that are used during the execution of the scenario.
 
 Attributes:
 - scenario_name: The name of the scenario.
@@ -110,11 +129,12 @@ Here you can include the results of your project, such as accuracy metrics, perf
         <figcaption style="text-align: center;">Predictions for Validation Batch 0</figcaption>
     </figure>
 </div>
+
 ## 🤝 Contributing
 
-Details on how to contribute to this project.
+TODO: Details on how to contribute to this project.
 
 ## 📜 License
 
-Information about the license.
+TODO: Information about the license.
 
